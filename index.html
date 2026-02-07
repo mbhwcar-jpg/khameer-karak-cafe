@@ -1,0 +1,448 @@
+html_code = '''<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خمير و كرك كافيه | Khameer & Karak Café</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;600;700&family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #8B4513;
+            --primary-light: #D2691E;
+            --secondary: #F5F5DC;
+            --accent: #DAA520;
+            --text: #2C1810;
+            --text-light: #5D4037;
+            --white: #FFFFFF;
+            --cream: #FFF8DC;
+            --card-bg: #FFFAF0;
+        .phone-display {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--primary);
+            color: var(--white);
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(139,69,19,0.3);
+            animation: fadeInUp 0.8s ease 0.5s both;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+        
+        .phone-display:hover {
+        .menu-category {
+            margin-bottom: 50px;
+        }
+        
+        .category-title {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--accent);
+            display: inline-block;
+        }
+        
+        .category-title.arabic {
+            font-family: 'Noto Sans Arabic', sans-serif;
+        }
+        
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .menu-item {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(139,69,19,0.1);
+        }
+        
+        .menu-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        [dir="rtl"] .menu-item:hover {
+            transform: translateX(-5px);
+        }
+        
+        .menu-item-name {
+            font-weight: 600;
+            color: var(--text);
+            font-size: 1.1rem;
+        }
+        
+        .menu-item-name.arabic {
+            font-family: 'Noto Sans Arabic', sans-serif;
+        }
+        
+        .menu-item-price {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.1rem;
+            white-space: nowrap;
+        .map-link {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 20px;
+            background: var(--accent);
+            color: var(--text);
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: transform 0.3s;
+        }
+        
+        .map-link:hover {
+            transform: translateY(-2px);
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .phone-display {
+                font-size: 1.1rem;
+                padding: 12px 25px;
+            }
+            
+            .highlight-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+            
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Toggle -->
+    <div class="lang-toggle">
+        <button class="lang-btn active" onclick="setLanguage('en')">EN</button>
+        <button class="lang-btn" onclick="setLanguage('ar')">عربي</button>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="rating-badge">
+                <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+                <span class="rating-text">4.8 (53+ reviews)</span>
+            </div>
+            <h1 data-en="Khameer & Karak Café" data-ar="خمير و كرك كافيه" class="arabic">خمير و كرك كافيه</h1>
+            <p class="hero-subtitle" data-en="Authentic Emirati flavors in the heart of Ajman" data-ar="نكهات إماراتية أصيلة في قلب عجمان">Authentic Emirati flavors in the heart of Ajman</p>
+            
+            <a href="tel:0502076005" class="phone-display">
+                <i class="fas fa-phone"></i>
+                050 207 6005
+            </a>
+            
+            <div class="cta-buttons">
+                <a href="#menu" class="btn btn-primary">
+                    <i class="fas fa-utensils"></i>
+                    <span data-en="View Menu" data-ar="عرض القائمة">View Menu</span>
+                </a>
+                <a href="https://maps.google.com/?q=9HCQ%2BX49+Al+Yasmeen+Ajman" target="_blank" class="btn btn-secondary">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span data-en="Get Directions" data-ar="الحصول على الاتجاهات">Get Directions</span>
+            <p class="section-subtitle" data-en="Complete menu with authentic flavors" data-ar="قائمة كاملة بنكهات أصيلة">Complete menu with authentic flavors</p>
+            
+            <!-- Hot Drinks -->
+            <div class="menu-category">
+                <h3 class="category-title" data-en="☕ Hot Drinks" data-ar="☕ مشروبات ساخنة">☕ Hot Drinks</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <span class="menu-item-name" data-en="Turkish Coffee" data-ar="قهوة تركية">Turkish Coffee</span>
+                        <span class="menu-item-price">4 AED</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name" data-en="Black Tea" data-ar="شاي أحمر">Black Tea</span>
+                        <span class="menu-item-price">1.5 AED</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name" data-en="Za'atar Tea" data-ar="شاي زعتر">Za'atar Tea</span>
+                        <span class="menu-item-price">1 AED</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name" data-en="Red Beans" data-ar="حبة حمرا">Red Beans</span>
+                        <span class="menu-item-price">5 AED</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name" data-en="Cappuccino" data-ar="كابتشينو">Cappuccino</span>
+                        <span class="menu-item-price">5 AED</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name" data-en="Karak Tea" data-ar="كرك">Karak Tea</span>
+                        <span class="menu-item-price">1, 2, 5 AED</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cold Drinks -->
+            <div class="menu-category">
+                <h3 class="category-title" data-en="🥤 Cold Drinks" data-ar="🥤 مشاريب باردة">🥤 Cold Drinks</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <span class="menu-item-name" data-en="Hibiscus Cocktail" data-ar="كركديه كوكتيل">Hibiscus Cocktail</span>
+                        <span class="menu-item-price">15 AED</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name" data-en="Plain Hibiscus" data-ar="كركديه ساده">Plain Hibiscus</span>
+                        <span class="menu-item-price">10 AED</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name" data-en="Iced Coffee" data-ar="قهوة باردة">Iced Coffee</span>
+                        <span class="menu-item-price">15 AED</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name" data-en="Chia Seeds with Mango" data-ar="حبوب الشيا بالمانجا">Chia Seeds with Mango</span>
+                        <span class="menu-item-price">15 AED</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name" data-en="Falooda" data-ar="فالودة">Falooda</span>
+                        <span class="menu-item-price">15 AED</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bakery - Khameer -->
+            <div class="menu-category">
+                <h3 class="category-title" data-en="🥖 Khameer (Bakery)" data-ar="🥖 خمير">🥖 Khameer (Bakery)</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <span class="menu-item-name" data-en="Plain Khameer, 3 pcs" data-ar="خمير ساده، ٣ حبات">Plain Khameer, 3 pcs</span>
+                        <span class="menu-item-price">15 AED</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name" data-en="Cheese & Honey Khameer" data-ar="خمير جبن وعسل">Cheese & Honey Khameer</span>
+                        <span class="menu-item-price">5 AED</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name" data-en="Cheese & Chips Khameer" data-ar="خمير جبن وشيبس">Cheese & Chips Khameer</span>
+                        <span class="menu-item-price">5 AED</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name" data-en="Cheese & Za'atar Khameer" data-ar="خمير جبن وزعتر">Cheese & Za'atar Khameer</span>
+                        <span class="menu-item-price">5 AED</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bakery - Ragag -->
+            <div class="menu-category">
+                <h3 class="category-title" data-en="🫓 Ragag" data-ar="🫓 رقاق">🫓 Ragag</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <span class="menu-item-name" data-en="Nutella Ragag" data-ar="رقاق نوتيلا">Nutella Ragag</span>
+                        <span class="menu-item-price">5 AED</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name" data-en="Cheese & Egg Ragag" data-ar="رقاق جبن وبيض">Cheese & Egg Ragag</span>
+                        <span class="menu-item-price">5 AED</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name" data-en="Cheese & Za'atar Ragag" data-ar="رقاق جبن وزعتر">Cheese & Za'atar Ragag</span>
+                        <span class="menu-item-price">5 AED</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name" data-en="Cheese & Chips Ragag" data-ar="رقاق جبن وشيبس">Cheese & Chips Ragag</span>
+                        <span class="menu-item-price">5 AED</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Desserts -->
+            <div class="menu-category">
+                <h3 class="category-title" data-en="🍯 Traditional Desserts" data-ar="🍯 حلويات تقليدية">🍯 Traditional Desserts</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <span class="menu-item-name" data-en="Luqaimat" data-ar="لقيمات">Luqaimat</span>
+                        <span class="menu-item-price">10-100 AED</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name" data-en="Khanfaroosh" data-ar="خنفروش">Khanfaroosh</span>
+                        <span class="menu-item-price">10-100 AED</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name" data-en="Cheese & Honey Chbab, 3 pcs" data-ar="جباب جبن وعسل ٣ حبات">Cheese & Honey Chbab, 3 pcs</span>
+                        <span class="menu-item-price">15 AED</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sandwiches -->
+            <div class="menu-category">
+                <h3 class="category-title" data-en="🥪 Sandwiches" data-ar="🥪 سندويشات">🥪 Sandwiches</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <span class="menu-item-name" data-en="Cheese Paratha" data-ar="براتا جبن">Cheese Paratha</span>
+                        <span class="menu-item-price">3 AED</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name" data-en="Cheese & Egg Paratha" data-ar="براتا جبن وبيض">Cheese & Egg Paratha</span>
+                        <span class="menu-item-price">4 AED</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name" data-en="Chicken Paratha" data-ar="براتا دجاج">Chicken Paratha</span>
+                        <span class="menu-item-price">5 AED</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name" data-en="Chicken Burger" data-ar="برجر دجاج">Chicken Burger</span>
+                        <span class="menu-item-price">6 AED</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Main Meals -->
+            <div class="menu-category">
+                <h3 class="category-title" data-en="🍛 Main Meals" data-ar="🍛 وجبات رئيسية">🍛 Main Meals</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <span class="menu-item-name" data-en="Green Rice with Chicken Curry" data-ar="عيش أخضر بكاري دجاج">Green Rice with Chicken Curry</span>
+                        <span class="menu-item-price">25-50 AED</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name" data-en="Pasta with White Sauce" data-ar="باستا وايت صوص">Pasta with White Sauce</span>
+                        <span class="menu-item-price">15-30 AED</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name" data-en="Noodles" data-ar="نودلز">Noodles</span>
+                        <span class="menu-item-price">15-30 AED</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-name" data-en="Stuffed Grape Leaves" data-ar="ورق عنب">Stuffed Grape Leaves</span>
+                        <span class="menu-item-price">25 AED</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Special -->
+            <div class="menu-category" style="background: var(--primary); color: white; padding: 30px; border-radius: 20px; margin-top: 40px;">
+                <h3 class="category-title" style="color: var(--accent); border-bottom-color: var(--accent);" data-en="⭐ Friday Special" data-ar="⭐ خاص الجمعة">⭐ Friday Special</h3>
+                <div class="menu-grid">
+                    <div class="menu-item" style="background: rgba(255,255,255,0.1); color: white;">
+                        <span class="menu-item-name" data-en="Salty Fish Majboos" data-ar="مجبوس مالح" style="color: white;">Salty Fish Majboos</span>
+                        <span class="menu-item-price" style="color: var(--accent);">25-100 AED</span>
+                    </div>
+                </div>
+                <p style="margin-top: 15px; opacity: 0.9; font-size: 0.95rem;" data-en="Available every Friday - Traditional Emirati dish" data-ar="متاح كل جمعة - طبق إماراتي تقليدي">Available every Friday - Traditional Emirati dish</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery">
+        <div class="container">
+            <h2 class="section-title" data-en="Gallery" data-ar="معرض الصور">Gallery</h2>
+            <p class="section-subtitle" data-en="A glimpse of our delicious offerings" data-ar="لمحة عن عروضنا اللذيذة">A glimpse of our delicious offerings</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item" data-label="Khameer Bread">
+                    <i class="fas fa-bread-slice"></i>
+                </div>
+                <div class="gallery-item" data-label="Karak Tea">
+                    <i class="fas fa-mug-hot"></i>
+                </div>
+                <div class="gallery-item" data-label="Luqaimat">
+                    <i class="fas fa-cookie-bite"></i>
+                </div>
+                <div class="gallery-item" data-label="Café Interior">
+                    <i class="fas fa-couch"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <h2 class="section-title" data-en="Visit Us" data-ar="زورونا">Visit Us</h2>
+            <p class="section-subtitle" data-en="We can't wait to serve you" data-ar="نحن في انتظار خدمتكم">We can't wait to serve you</p>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-label" data-en="Location" data-ar="الموقع">Location</div>
+                    <div class="contact-info">
+                        9HCQ+X49 - Al Yasmeen<br>
+                        Ajman - UAE
+                    </div>
+                    <a href="https://maps.google.com/?q=9HCQ%2BX49+Al+Yasmeen+Ajman+UAE" target="_blank" class="map-link">
+                        <i class="fas fa-directions"></i> <span data-en="Open in Maps" data-ar="فتح في الخرائط">Open in Maps</span>
+                    </a>
+            <a href="https://wa.me/971502076005"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p data-en="© 2024 Khameer & Karak Café. All rights reserved." data-ar="© 2024 خمير و كرك كافيه. جميع الحقوق محفوظة.">© 2024 Khameer & Karak Café. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Language Switching
+        function setLanguage(lang) {
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            
+            // Update active button
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Update all translatable elements
+            document.querySelectorAll('[data-en][data-ar]').forEach(el => {
+                el.textContent = el.getAttribute('data-' + lang);
+            });
+        }
+        
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>'''
+
+# Save the file
+with open('/mnt/kimi/output/khameer_karak_cafe_complete.html', 'w', encoding='utf-8') as f:
+    f.write(html_code)
+
+print("✅ Complete website created with full menu!")
+print("📁 File saved as: khameer_karak_cafe_complete.html")
+print("\n🆕 NEW FEATURES:")
+print(" • Complete menu from your photos (Arabic + English)")
+print(" • Phone number prominently displayed in hero section")
+print(" • Correct location: 9HCQ+X49 - Al Yasmeen - Ajman - UAE")
+print(" • Google Maps link for directions")
+print(" • All categories: Hot Drinks, Cold Drinks, Khameer, Ragag, Desserts, Sandwiches, Main Meals")
+print(" • Friday Special: Salty Fish Majboos")
